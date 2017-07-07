@@ -12,11 +12,22 @@
 * ㅎㅇ
 * ㅎㅇ
 * ㅂㅇ
+* dkssksdk
 
 ```Python
 import antigrvity
-for i in {i,c,d,g}
-print(i is in group)
+for i 
 
 ```
+## 2. studying~
+
+1.ㅇㄹㅇㄹ
+2.
+4.
+6.
+8.
+
+*
+*
+
 
