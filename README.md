@@ -4,7 +4,7 @@
 ## 1. Git 다운로드
 > 성공
 
-1. ㅁ
+1. julia
 2. ㅠ
 3. ㅇ
 
@@ -15,7 +15,8 @@
 
 ```Python
 import antigrvity
-for i in 
+for i in {i,c,d,g}
+print(i is in group)
 
 ```
 
