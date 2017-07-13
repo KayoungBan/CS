@@ -1,36 +1,64 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Jul 13 11:44:40 2017
+Created on Thu Jul 13 11:43:55 2017
 
 @author: Bany
 """
 
-########################## Q4 ##########################
+########################## Q2 ##########################
+####from math import sin cos... or * ####
 
-import matplotlib.pyplot as plt  # need to plot
-import numpy as np  # need to arange
+print("<Derivative for x^2 for large error>")  # error reference
 
-x = np.arange(-1,1.0001,0.0001) # 20000 spots
-f = np.arange(-2,2.0001,0.0001) # 40000 spots
+def x2_dev1(x):  # definition of x^2 derivative
+    h = 10**(-5)  # proper h
+    return ((x+h)**2 - (x)**2) / h  # def of derivative
+a = int(input("Please input a for x^2, a = "))  # input 'a' some point
 
-x1 = float(input("Please input x1=")) # given point x1
-y1 = float(input("Please input y1=")) # given point y1
-
-y_1 = (1-x**2)**(0.5)  # upper circle
-y_2 = -(1-x**2)**(0.5)   # lower circle
-
-y = -x1*f/y1 + 1/y1  # tangent line
+print("f'(a) = ", x2_dev1(a))  # print f'(a)
 
 
-plt.figure(figsize=(8, 8), dpi=100)  # plot
-plt.xlim(-2,2)  # x-axis range
-plt.ylim(-2,2)  # y-axis range
-plt.plot(x,y_1,label='Upper Circle')  # circle-label
-plt.plot(x,y_2,label='Lower Circle')  # circle-label
-plt.plot(f,y,label="Tagent line")  # line-label
-plt.xlabel('x')  # x-axis
-plt.ylabel('y')  # y-axis
-plt.title('Unit circle')  # title
-plt.grid()  # grid
-plt.legend()  # for label
-plt.show()  # plot show
+
+print("<Derivative for x^2>")
+
+def x2_dev(x):  # definition of x^2 derivative
+    h = 10**(-9)
+    return ((x+h)**2 - (x-h)**2) / (2*h)
+a1 = int(input("Please input a for x^2, a = "))  # input 'a' some point
+
+print("f'(a) = ", x2_dev(a1))
+
+
+print("<Derivative for sin(x)>")
+
+def sin_dev(x):  # definition of sin(x) derivative
+    import math
+    h = 10**(-9)
+    return (math.sin(x+h) - math.sin(x-h)) / (2*h)
+a2 = int(input("Please input a for sin(x), a = "))  # input 'a' some point
+
+print("f'(a) = ", sin_dev(a2))
+
+
+print("<Derivative for e^x>")
+
+def e_dev(x):  # definition of e^x derivative
+    import math
+    h = 10**(-9)
+    return (math.e**(x+h) - math.e**(x-h)) / (2*h)
+a3 = int(input("Please input a for e^x, a = "))  # input 'a' some point
+
+print("f'(a) = ", e_dev(a3))
+
+
+print("<Derivative for ln(x)>")
+
+def ln_dev(x):  # definition of ln(X) derivative
+    import math
+    h = 10**(-9)
+    return (math.log(x+2*h) - math.log(x+h)) / h
+a4 = int(input("Please input a for ln(x), a = "))  # input 'a' some point
+
+print("f'(a) = ", ln_dev(a4))
+
+
