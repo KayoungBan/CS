@@ -115,8 +115,10 @@ for i in range(int(3650*24*3600/dt)):
 print(x_list[-1]/AU,y_list[-1]/AU,z_list[-1]/AU)
 
 plt.plot(x_list,label='x-axis')
+plt.plot(y_list,label='y-axis')
+plt.plot(z_list,label='z-axis')
 plt.xlabel('time')  # x-axis
-plt.ylabel('x(AU)')  # y-axis
+plt.ylabel('x')  # y-axis
 plt.title('Dangerous')  # title
 plt.show()  # plot show
 
