@@ -88,7 +88,7 @@ class Trinary(object):
 
 * Use 'Runge Kutta method 4th order'
     * 수치 해석에서, 룽게-쿠타 방법은 미분 방정식 중 초기값 문제를 푸는 방법 중 하나이다.(by wiki)
-    <img src="https://github.com/KayoungBan/CS/blob/master/Problem.3/rk1.PNG">
+    <img src="C:\Users\Bany\Documents\CS\Problem.3\rk1.png">
     
     * k1,k2,k3,k4를 구하는 방법은 아래와 같다.
     <img src="C:\Users\Bany\Documents\CS\Problem.3\rk5.png">

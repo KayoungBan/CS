@@ -118,7 +118,7 @@ plt.plot(x_list,label='x-axis')
 plt.plot(y_list,label='y-axis')
 plt.plot(z_list,label='z-axis')
 plt.xlabel('time')  # x-axis
-plt.ylabel('x')  # y-axis
+plt.ylabel('x/y/z')  # y-axis
 plt.title('Dangerous')  # title
 plt.show()  # plot show
 
