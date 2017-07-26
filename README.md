@@ -103,12 +103,13 @@ class Trinary(object):
     <img src="C:\Users\Bany\Documents\CS\Problem.3\rk4.png" width="70%">
 
 
+* 이를 이용하여 a_i 들을 구하면,
 ```python
 def a_x(x,y,z):
     
     return g_con*sun_m*(-x)/((x**2+y**2+z**2)**1.5)
 ```
-
+* 위에서 구한 k1,k2,k3,k4를 구하면,
 ``` python
 def k_x(x0,x1,y1,z1,v):
     
@@ -126,26 +127,20 @@ def k_x(x0,x1,y1,z1,v):
     
     return(k1,k2,k3,k4,k1_v,k2_v,k3_v,k4_v)
 ```
+* x,y,z에 대한 좌표와 속력을 list로 입력
 
 ``` python
 x_list = [x0,x1]
-y_list = [y0,y1]
-z_list = [z0,z1]
 
 xv_list = [xv0]
-yv_list = [yv0]
-zv_list = [zv0]
-```
 
-``` python
 for i in range(int(3650*24*3600/dt)):
     k1, k2, k3, k4, k1_v, k2_v, k3_v, k4_v = k_x(x_list[i],x_list[i+1],y_list[i+1],z_list[i+1], xv_list[i])
 
     x_list.append(x_list[i+1] + dt*(k1+2*k2+2*k3+k4)/6.0)
     xv_list.append(xv_list[i] + dt*(k1_v+2*k2_v+2*k3_v+k4_v)/6.0)    
 ```
-
-
+* print and plot
 ``` python
 print(x_list[-1]/AU,y_list[-1]/AU,z_list[-1]/AU)
 
