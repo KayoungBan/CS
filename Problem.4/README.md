@@ -110,6 +110,7 @@ print("Root is", root)
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 
 g = pd.read_csv('data.csv')
 x = g['x']
@@ -119,13 +120,16 @@ t = list(range(7301))
 
 r = (x**2+y**2+z**2)**0.5
 ```
-* 이를 이용하여 a_i 들을 구하면,
+* list 설정
+    * rr : dr의 list
+    * root : dr의 부호가 바뀌는 r의 값
+    * root_t : root의 t값(x축 값)
 ```python
 rr = []
 root = []
 root_t = []
 ```
-* 위에서 구한 k1,k2,k3,k4를 구하면,
+* 만들어 놓은 list들에 값을 대입
 ``` python
 for i in range(len(r)-1):
     rr.append(r[i+1]-r[i])
@@ -136,12 +140,22 @@ for i in range(len(rr)-1):
         root.append(r[i+1])
         root_t.append(i+1)
 ```
-* x,y,z에 대한 좌표와 속력을 list로 입력
+* 3D plot과 (t,r)그래프 및 (t,root) 점 plot
 
 ``` python
+fig = plt.figure(1)  
+ax = fig.add_subplot(111, projection='3d')  
+ax.plot(x, y, z)     
 
-```
-* print and plot
-``` python
 
+plt.figure(2)
+plt.plot(t,r)
+plt.plot(root_t,root,'ro')
+
+plt.xlabel('time(half of a day)')  # x-axis
+plt.xlabel('distance(AU)')  # y-axis
+plt.title('Physics Test')  # title
+plt.grid()  # grid
+plt.legend()  # for label
+plt.show()  # plot show
 ```
