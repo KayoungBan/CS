@@ -35,7 +35,7 @@ while(err1>threshold): # 에러가 설정된 에러율보다 크다면 공 또 �
     pi1 = cnt1/step*4 # 한회 시행했을때 수정된 pi 값 계산
     err1 = abs((pi-pi1)*100/pi) # 수정된 에러 계산
 ```
-* 2D
+* 3D
 ``` python
 while(err2>threshold): # 에러가 설정된 에러율보다 크다면 공 또 던짐
     x = rd.random()*2-1 # 랜덤발생
